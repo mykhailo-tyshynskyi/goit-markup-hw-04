@@ -63,6 +63,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   padding: 24px 0 23px;
+  position: relative;
 }
 .page-nav-link:hover,
 .page-nav-link:focus {
@@ -97,6 +98,17 @@ button {
   flex-grow: 1;
 }
 
+.page-nav-link:active::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  position: absolute;
+  bottom: 0;
+}
+
 .flex-nav {
   display: flex;
   column-gap: 40px;
@@ -112,9 +124,12 @@ button {
 .main-title {
   background-color: #2e2f42;
   padding: 188px 0;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)) ,url(../images/people-office.jpg);
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 1440px auto;
 }
 
 .main-title-text {
@@ -188,6 +203,22 @@ button {
   padding: 120px 0;
 }
 
+.social-link {
+  display: flex;
+  background-color: #4D5AE5;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.social-link:hover,
+.social-link:focus{
+  background-color: #31D0AA;
+}
+
+.social-link .icon {
+ fill: #F4F4FD;
+}
+
 /* #endregion section common styles*/
 /* #region features */
 
@@ -213,6 +244,14 @@ button {
 .features-item {
   width: calc((100% - 72px) / 4);
 }
+
+.features-icon-box {
+  padding: 24px 100px;
+  margin-bottom: 8px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  background-color: #f4f4fd;
+}
 /* #endregion features */
 /* #region team */
 
@@ -230,11 +269,21 @@ button {
   background-color: #ffffff;
   width: calc((100% - 72px) / 4);
   border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
-.member-card .text-container {
+.member-card .info-container {
   padding: 32px 16px 32px 16px;
 }
+
+.member-card .social-links-box {
+  display: flex;
+  margin-top: 8x;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  }
+
 
 .list-member-name {
   font-weight: 500;
@@ -265,7 +314,7 @@ button {
 .portfolio-card {
   width: calc((100% - 48px) / 3);
 }
-.portfolio-card .text-container {
+.portfolio-card .info-container {
   padding: 32px 15px 31px 15px;
   border-bottom: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
