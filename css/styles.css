@@ -106,7 +106,7 @@ button {
   border-radius: 2px;
   background-color: #404bbf;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
 }
 
 .flex-nav {
@@ -247,6 +247,7 @@ button {
 }
 
 .features-icon-box {
+  display: flex;
   padding: 24px 100px;
   margin-bottom: 8px;
   border: 1px solid #8e8f99;
@@ -363,6 +364,12 @@ overflow: hidden;
   padding: 100px 0;
 }
 
+.page-footer .container{
+  display: flex;
+  align-items: flex-start;
+  column-gap: 120px;
+}
+
 .footer-content {
   width: 264px;
 }
@@ -385,5 +392,22 @@ overflow: hidden;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
+}
+
+.footer-social-media {
+display: block;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5; 
+letter-spacing: 0.02em;
+color: #ffffff;
+}
+
+.footer-social-media .social-links-box {
+  display: flex;
+  margin-top: 16px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
 }
 /* #endregion footer */
