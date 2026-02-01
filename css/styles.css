@@ -137,7 +137,7 @@ button {
 }
 
 .background-box {
-  width: 1440px;
+  max-width: 1440px;
   padding: 188px 0;
   margin-left: auto;
   margin-right: auto;
@@ -328,7 +328,8 @@ button {
   align-items: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.member-card .social-link:hover {
+.member-card .social-link:hover,
+.member-card .social-link:focus {
   background-color: #404bbf;
 }
 
