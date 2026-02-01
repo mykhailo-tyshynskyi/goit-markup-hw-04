@@ -58,25 +58,43 @@ button {
 }
 
 .page-nav-link {
+  display: block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   padding: 24px 0 23px;
   position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-nav-link:hover,
 .page-nav-link:focus {
+  color: #404bbf
+}
+
+.page-nav-link.active {
   color: #404bbf;
+}
+.page-nav-link.active::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  position: absolute;
+  bottom: -1px;
 }
 
 .contact-link {
+  display: block;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-style: normal;
   color: #434455;
   padding: 24px 0 23px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -90,6 +108,7 @@ button {
 }
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-links {
@@ -98,16 +117,6 @@ button {
   flex-grow: 1;
 }
 
-.page-nav-link:active::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-  position: absolute;
-  bottom: -1px;
-}
 
 .flex-nav {
   display: flex;
@@ -123,13 +132,19 @@ button {
 
 .main-title {
   background-color: #2e2f42;
+    }
+
+.background-box{
+  width: 1440px;
   padding: 188px 0;
+  margin-left: auto;
+  margin-right: auto;
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url(../images/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1440px auto;
+  background-size: cover;
 }
 
 .main-title-text {
@@ -151,17 +166,19 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
   padding: 16px 32px;
   border: none;
   border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-button:hover,
 .order-button:focus {
-  background: #404bbf;
+  background-color: #404bbf;
 }
 /* #endregion main title */
 /* #region section common styles*/
@@ -191,7 +208,7 @@ button {
 }
 
 .container {
-  width: 1158px;
+  max-width: 1158px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -207,14 +224,7 @@ button {
   display: flex;
   background-color: #4D5AE5;
   border-radius: 50%;
-  padding: 12px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.social-link:hover,
-.social-link:focus{
-  background-color: #31D0AA;
-}
+  }
 
 .social-link .icon {
  fill: #F4F4FD;
@@ -248,7 +258,10 @@ button {
 
 .features-icon-box {
   display: flex;
-  padding: 24px 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 112px;
   margin-bottom: 8px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
@@ -303,6 +316,10 @@ button {
   color: #434455;
   text-align: center;
 }
+.member-card .social-link{
+  padding: 12px;
+  }
+
 /* #endregion team */
 /* #region portfolio */
 
@@ -347,8 +364,6 @@ overflow: hidden;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
-
-
 .portfolio-card .info-container {
   padding: 32px 15px 31px 15px;
   border-bottom: 1px solid #e7e9fc;
@@ -366,7 +381,7 @@ overflow: hidden;
 
 .page-footer .container{
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   column-gap: 120px;
 }
 
@@ -409,5 +424,15 @@ color: #ffffff;
   justify-content: center;
   align-items: center;
   column-gap: 16px;
+}
+
+.page-footer .social-link {
+  padding: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-footer .social-link:hover,
+.page-footer .social-link:focus {
+  background-color: #31D0AA;
 }
 /* #endregion footer */
